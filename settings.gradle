@@ -1,8 +1,0 @@
-rootProject.name='UrbanNoise'
-include ':app'
-include ':features:splashscreen'
-include ':features:tutorial'
-include ':features:dashboard'
-include ':libraries:core'
-include ':libraries:network'
-include ':libraries:database'

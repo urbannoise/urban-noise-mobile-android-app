@@ -22,7 +22,7 @@ object BuildModules {
     const val CORE = ":core"
 
     object Features {
-        const val SPLASH_SCREEN = ":features:splashscreen"
+        const val SPLASHSCREEN = ":features:splashscreen"
         const val TUTORIAL = ":features:tutorial"
         const val DASHBOARD = ":features:dashboard"
     }
