@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">UrbanNoise</string>
+    <string name="title_dynamicfeature">Spash Screen</string>
+    <string name="title_splashscreen">Splash Screen</string>
+    <string name="title_tutorial">Tutorial Screen</string>
+    <string name="title_dashboard">Dashboard</string>
 </resources>
