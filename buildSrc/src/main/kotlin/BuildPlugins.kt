@@ -22,6 +22,7 @@ object BuildPlugins {
     const val ANDROID_DYNAMIC_FEATURE = "com.android.dynamic-feature"
     const val ANDROID_LIBRARY = "com.android.library"
 
+    const val KOTLIN = "kotlin"
     const val KOTLIN_ANDROID = "kotlin-android"
     const val KOTLIN_ANDROID_EXTENSIONS = "kotlin-android-extensions"
     const val KOTLIN_KAPT = "kotlin-kapt"
@@ -30,6 +31,7 @@ object BuildPlugins {
     const val NAVIGATION_SAFE_ARGS = "androidx.navigation.safeargs.kotlin"
     const val JACOCO = "com.vanniktech.android.junit.jacoco"
     const val FABRIC = "io.fabric"
+    const val GOOGLE_SERVICES = "com.google.gms.google-services"
 
     const val DETEKT = "plugins.detekt"
     const val DOKKA = "plugins.dokka"

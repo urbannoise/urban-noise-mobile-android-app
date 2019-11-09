@@ -1,3 +1,5 @@
+rootProject.buildFileName = "build.gradle.kts"
+
 include(
     BuildModules.APP,
     BuildModules.CORE,
@@ -7,5 +9,3 @@ include(
     BuildModules.Libraries.DATABASE,
     BuildModules.Libraries.NETWORK
 )
-
-rootProject.buildFileName = "build.gradle.kts"
