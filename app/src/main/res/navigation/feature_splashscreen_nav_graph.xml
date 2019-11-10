@@ -5,6 +5,6 @@
     app:startDestination="@+id/splashscreenFragment">
 
     <fragment android:id="@+id/splashscreenFragment"
-        android:name="com.urban.noise.splashscreen.SplashscreenFragment"
+        android:name="com.urban.noise.feature.splashscreen.SplashscreenFragment"
         android:label="SplashscreenFragment"/>
 </navigation>

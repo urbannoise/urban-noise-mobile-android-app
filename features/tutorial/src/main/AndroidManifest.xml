@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
-    package="com.urban.noise.tutorial">
+    package="com.urban.noise.feature.tutorial">
 
     <dist:module
         dist:instant="true"
