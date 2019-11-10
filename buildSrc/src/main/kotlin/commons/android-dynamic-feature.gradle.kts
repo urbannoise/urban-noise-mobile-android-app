@@ -99,6 +99,21 @@ dependencies {
     implementation(project(BuildModules.CORE))
 
     implementation(Dependencies.KOTLIN)
+    implementation(Dependencies.APPCOMPAT)
+    implementation(Dependencies.COROUTINES)
+    implementation(Dependencies.COROUTINES_ANDROID)
+    implementation(Dependencies.NAVIGATION_FRAGMENT)
+    implementation(Dependencies.NAVIGATION_UI)
+    implementation(Dependencies.LIFECYCLE_EXTENSIONS)
+    implementation(Dependencies.LIFECYCLE_VIEWMODEL)
+    implementation(Dependencies.CORE_KTX)
+    implementation(Dependencies.FRAGMENT_KTX)
+    implementation(Dependencies.CONSTRAIN_LAYOUT)
+    implementation(Dependencies.DAGGER)
+    implementation(Dependencies.TIMBER)
+
+    kapt(AnnotationProcessorsDependencies.DAGGER)
+    kapt(AnnotationProcessorsDependencies.DATABINDING)
 
     addTestsDependencies()
 }
