@@ -1,4 +1,4 @@
 <resources>
     <!--Application name-->
-    <string name="app_name">UrbanNoiseDEV</string>
+    <string name="app_name">UrbanNoiseQA</string>
 </resources>
