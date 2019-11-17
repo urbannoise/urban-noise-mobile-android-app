@@ -10,8 +10,10 @@ pool:
   vmImage: 'macos-latest'
 
 steps:
-- bash: echo "fabric.secret=$FABRIC_SECRET" >> local.properties
-- bash: echo "fabric.key=$FABRIC_KEY" >> local.properties
+- script: |
+  echo "fabric.secret=$FABRIC_SECRET" >> local.properties
+  echo "fabric.key=$FABRIC_KEY" >> local.properties
+
 - task: Gradle@2
   inputs:
     workingDirectory: ''
@@ -19,4 +21,4 @@ steps:
     gradleOptions: '-Xmx3072m'
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
-    tasks: 'assembleDebug'
+    tasks: 'detekt ktlint lintDevDebug spotlessKotlinCheck testDevDebugUnitTest'
