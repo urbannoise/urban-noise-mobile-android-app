@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/app_navigation_graph"
-    app:startDestination="@id/feature_splashscreen_nav_graph">
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/feature_splashscreen_nav_graph"
+    tools:ignore="InvalidNavigation">
     <include app:graph="@navigation/feature_splashscreen_nav_graph"/>
     <include app:graph="@navigation/feature_tutorial_nav_graph"/>
     <include app:graph="@navigation/feature_dashboard_nav_graph"/>

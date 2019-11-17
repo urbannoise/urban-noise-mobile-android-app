@@ -21,7 +21,7 @@ import com.urban.noise.feature.splashscreen.R
 import com.urban.noise.feature.splashscreen.databinding.FragmentSplashscreenBinding
 import com.urban.noise.library.core.ui.base.BaseFragment
 
-class SplashscreenFragment: BaseFragment<FragmentSplashscreenBinding, SplashscreenViewModel>(
+class SplashscreenFragment : BaseFragment<FragmentSplashscreenBinding, SplashscreenViewModel>(
     layoutId = R.layout.fragment_splashscreen
 ) {
     override fun onInitDependencyInjection() {
@@ -31,5 +31,4 @@ class SplashscreenFragment: BaseFragment<FragmentSplashscreenBinding, Splashscre
     override fun onInitDataBinding() {
         // TODO
     }
-
 }

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/feature_splashscreen_nav_graph"
-    app:startDestination="@+id/splashscreenFragment">
-
+    app:startDestination="@+id/splashscreenFragment"
+    tools:ignore="UnusedIds">
     <fragment android:id="@+id/splashscreenFragment"
         android:name="com.urban.noise.feature.splashscreen.ui.SplashscreenFragment"
         android:label="SplashscreenFragment"/>

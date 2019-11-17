@@ -30,5 +30,4 @@ import javax.inject.Singleton
 interface CoreComponent {
 
     fun context(): Context
-
 }
