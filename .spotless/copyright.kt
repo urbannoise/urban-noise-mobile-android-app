@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 urbannoise.org
+ * Copyright $YEAR urbannoise.org
  *
  * Licensed under the Attribution-NonCommercial-ShareAlike 4.0
  * International (CC BY-NC-SA 4.0) you may not use this file except
@@ -15,6 +15,3 @@
  * limitations under the License.
  */
 
-plugins {
-    id("commons.android-dynamic-feature")
-}

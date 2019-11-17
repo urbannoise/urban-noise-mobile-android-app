@@ -1,11 +1,12 @@
 /*
- * Copyright 2019 vmadalin.com
+ * Copyright 2019 urbannoise.org
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
+ * Licensed under the Attribution-NonCommercial-ShareAlike 4.0
+ * International (CC BY-NC-SA 4.0) you may not use this file except
+ * in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     https://creativecommons.org/licenses/by-nc-sa/4.0/
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -56,12 +57,12 @@ configure<SpotlessExtension> {
                 mapOf(
                     "dir" to ".",
                     "include" to listOf("**/*.kt"),
-                    "exclude" to listOf("**/build/**", "**/buildSrc/**")
+                    "exclude" to listOf("**/build/**", "**/buildSrc/**", "**/.*")
                 )
             )
         )
         licenseHeaderFile(
-            rootProject.file("COPYRIGHT"),
+            rootProject.file(".spotless/copyright.kt"),
             "^(package|object|import|interface)"
         )
         trimTrailingWhitespace()
@@ -70,9 +71,17 @@ configure<SpotlessExtension> {
     }
 
     kotlinGradle {
-        target("**/*.gradle.kts", "*.gradle.kts")
+        target(
+            fileTree(
+                mapOf(
+                    "dir" to ".",
+                    "include" to listOf("**/*.gradle.kts", "*.gradle.kts"),
+                    "exclude" to listOf("**/build/**")
+                )
+            )
+        )
         licenseHeaderFile(
-            rootProject.file("COPYRIGHT"),
+            rootProject.file(".spotless/copyright.kt"),
             "package|import|tasks|apply|plugins|include|val|object|interface"
         )
         trimTrailingWhitespace()
