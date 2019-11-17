@@ -131,7 +131,7 @@ junitJacoco {
 }
 
 afterEvaluate {
-    //createFabricProperties(this)
+    createFabricProperties(this)
 }
 
 dependencies {
