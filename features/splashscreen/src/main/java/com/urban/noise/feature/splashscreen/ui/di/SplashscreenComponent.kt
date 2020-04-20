@@ -17,9 +17,9 @@
 
 package com.urban.noise.feature.splashscreen.ui.di
 
-import com.urban.noise.feature.splashscreen.ui.SplashscreenFragment
 import com.urban.noise.base.android.di.CoreComponent
 import com.urban.noise.base.android.di.scopes.FeatureScope
+import com.urban.noise.feature.splashscreen.ui.SplashscreenFragment
 import dagger.Component
 
 @FeatureScope
