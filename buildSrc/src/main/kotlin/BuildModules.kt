@@ -19,7 +19,7 @@
  */
 object BuildModules {
     const val APP = ":app"
-    const val CORE = ":core"
+    const val BASE_ANDROID = ":base-android"
 
     object Features {
         const val SPLASHSCREEN = ":features:splashscreen"

@@ -33,7 +33,7 @@ plugins {
 
 allOpen {
     // allows mocking for classes w/o directly opening them for release builds
-    annotation("com.vmadalin.core.annotations.OpenClass")
+    annotation("com.urban.noise.base.android.annotations.OpenClass")
 }
 
 android {
@@ -135,7 +135,7 @@ afterEvaluate {
 }
 
 dependencies {
-    implementation(project(BuildModules.CORE))
+    implementation(project(BuildModules.BASE_ANDROID))
 
     implementation(Dependencies.KOTLIN)
     implementation(Dependencies.APPCOMPAT)

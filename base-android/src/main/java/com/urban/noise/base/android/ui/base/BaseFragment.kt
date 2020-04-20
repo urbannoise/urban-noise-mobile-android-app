@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.urban.noise.library.core.ui.base
+package com.urban.noise.base.android.ui.base
 
 import android.content.Context
 import android.os.Bundle
