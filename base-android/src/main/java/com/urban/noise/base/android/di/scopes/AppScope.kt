@@ -15,18 +15,13 @@
  * limitations under the License.
  */
 
-package com.urban.noise.library.core.di.modules
+package com.urban.noise.base.android.di.scopes
 
-import android.app.Application
-import android.content.Context
-import dagger.Module
-import dagger.Provides
-import javax.inject.Singleton
+import javax.inject.Scope
 
-@Module
-class ContextModule(private val application: Application) {
-
-    @Singleton
-    @Provides
-    fun provideContext(): Context = application
-}
+/**
+ * Scope for the entire app runtime.
+ */
+@Scope
+@kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
+annotation class AppScope

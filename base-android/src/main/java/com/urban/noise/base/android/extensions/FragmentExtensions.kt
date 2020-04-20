@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.urban.noise.library.core.extensions
+package com.urban.noise.base.android.extensions
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel

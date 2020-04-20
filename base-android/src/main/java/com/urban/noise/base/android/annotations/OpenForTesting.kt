@@ -15,13 +15,18 @@
  * limitations under the License.
  */
 
-package com.urban.noise.library.core.di.scopes
-
-import javax.inject.Scope
+package com.urban.noise.base.android.annotations
 
 /**
- * Scope for the entire app runtime.
+ * This annotation allows us to open some classes for mocking purposes while they are final in
+ * release builds.
  */
-@Scope
-@kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
-annotation class AppScope
+@Target(AnnotationTarget.ANNOTATION_CLASS)
+annotation class OpenClass
+
+/**
+ * Annotate a class with [OpenForTesting] if you want it to be extendable in debug builds.
+ */
+@OpenClass
+@Target(AnnotationTarget.CLASS)
+annotation class OpenForTesting

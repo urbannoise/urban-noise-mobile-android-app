@@ -17,7 +17,7 @@
 
 include(
     BuildModules.APP,
-    BuildModules.CORE,
+    BuildModules.BASE_ANDROID,
     BuildModules.Features.SPLASHSCREEN,
     BuildModules.Features.TUTORIAL,
     BuildModules.Features.DASHBOARD,

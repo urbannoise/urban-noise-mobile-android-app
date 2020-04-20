@@ -15,19 +15,21 @@
  * limitations under the License.
  */
 
-package com.urban.noise.library.core.di
+package com.urban.noise.base.android.extensions
 
-import android.content.Context
-import com.urban.noise.library.core.di.modules.ContextModule
-import dagger.Component
-import javax.inject.Singleton
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 
-/**
- * Core component that all module's components depend on.
- */
-@Singleton
-@Component(modules = [ContextModule::class])
-interface CoreComponent {
+fun <T> LifecycleOwner.observe(liveData: LiveData<T>, observer: (T) -> Unit = {}) {
+    liveData.observe(this, Observer {
+        it?.let { t -> observer(t) }
+    })
+}
 
-    fun context(): Context
+fun <T> LifecycleOwner.observe(liveData: MutableLiveData<T>, observer: (T) -> Unit = {}) {
+    liveData.observe(this, Observer {
+        it?.let { t -> observer(t) }
+    })
 }

@@ -15,24 +15,31 @@
  * limitations under the License.
  */
 
-package com.urban.noise.library.core.ui.bindings
+package com.urban.noise.base.android.ui.bindings
 
-import android.widget.ImageView
-import androidx.annotation.DrawableRes
-import androidx.core.content.ContextCompat
+import android.view.View
+import android.view.View.GONE
+import android.view.View.INVISIBLE
+import android.view.View.VISIBLE
 import androidx.databinding.BindingAdapter
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 
-@BindingAdapter("imageUrl", "imagePlaceholder", requireAll = false)
-fun ImageView.imageUrl(url: String?, @DrawableRes placeholderId: Int?) {
-    Glide
-        .with(context)
-        .load(url)
-        .transition(DrawableTransitionOptions.withCrossFade())
-        .placeholder(placeholderId?.let {
-            ContextCompat.getDrawable(context, it)
-        })
-        .centerCrop()
-        .into(this)
-}
+@set:BindingAdapter("visible")
+var View.visible
+    get() = visibility == VISIBLE
+    set(value) {
+        visibility = if (value) VISIBLE else GONE
+    }
+
+@set:BindingAdapter("gone")
+var View.gone
+    get() = visibility == GONE
+    set(value) {
+        visibility = if (value) GONE else VISIBLE
+    }
+
+@set:BindingAdapter("invisible")
+var View.invisible
+    get() = visibility == INVISIBLE
+    set(value) {
+        visibility = if (value) INVISIBLE else VISIBLE
+    }

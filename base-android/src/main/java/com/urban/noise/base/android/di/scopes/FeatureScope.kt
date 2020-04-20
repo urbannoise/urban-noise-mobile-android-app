@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.urban.noise.library.core.di.scopes
+package com.urban.noise.base.android.di.scopes
 
 import javax.inject.Scope
 
