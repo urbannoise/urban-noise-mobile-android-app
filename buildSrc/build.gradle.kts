@@ -35,16 +35,16 @@ kotlinDslPluginOptions {
 }
 
 object PluginsVersions {
-    const val GRADLE_ANDROID = "3.5.1"
-    const val GRADLE_VERSIONS = "0.22.0"
-    const val KOTLIN = "1.3.50"
-    const val NAVIGATION = "2.1.0-beta02"
-    const val JACOCO = "0.15.0"
+    const val GRADLE_ANDROID = "3.6.3"
+    const val GRADLE_VERSIONS = "0.28.0"
+    const val KOTLIN = "1.3.72"
+    const val NAVIGATION = "2.2.0"
+    const val JACOCO = "0.16.0"
     const val FABRIC = "1.31.0"
-    const val DOKKA = "0.9.18"
-    const val KTLINT = "0.34.2"
-    const val SPOTLESS = "3.24.1"
-    const val DETEKT = "1.0.1"
+    const val DOKKA = "0.10.1"
+    const val KTLINT = "0.36.0"
+    const val SPOTLESS = "3.28.1"
+    const val DETEKT = "1.8.0"
 }
 
 dependencies {
