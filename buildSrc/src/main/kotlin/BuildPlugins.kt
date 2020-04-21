@@ -30,7 +30,6 @@ object BuildPlugins {
 
     const val NAVIGATION_SAFE_ARGS = "androidx.navigation.safeargs.kotlin"
     const val JACOCO = "com.vanniktech.android.junit.jacoco"
-    const val FABRIC = "io.fabric"
     const val GOOGLE_SERVICES = "com.google.gms.google-services"
 
     const val DETEKT = "plugins.detekt"
