@@ -109,7 +109,7 @@ dependencies {
     implementation(Dependencies.LIFECYCLE_VIEWMODEL)
     implementation(Dependencies.CORE_KTX)
     implementation(Dependencies.FRAGMENT_KTX)
-    implementation(Dependencies.CONSTRAIN_LAYOUT)
+    implementation(Dependencies.CONSTRAINT_LAYOUT)
     implementation(Dependencies.DAGGER)
     implementation(Dependencies.TIMBER)
 

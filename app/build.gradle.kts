@@ -15,7 +15,6 @@
  * limitations under the License.
  */
 
-import utils.createFabricProperties
 import dependencies.Dependencies
 import dependencies.DebugDependencies
 import extensions.*
@@ -28,7 +27,6 @@ plugins {
     id(BuildPlugins.KOTLIN_ALLOPEN)
     id(BuildPlugins.NAVIGATION_SAFE_ARGS)
     id(BuildPlugins.JACOCO)
-    id(BuildPlugins.FABRIC)
 }
 
 allOpen {
@@ -130,17 +128,13 @@ junitJacoco {
     includeNoLocationClasses = true
 }
 
-afterEvaluate {
-    createFabricProperties(this)
-}
-
 dependencies {
     implementation(project(BuildModules.BASE_ANDROID))
 
     implementation(Dependencies.KOTLIN)
     implementation(Dependencies.APPCOMPAT)
     implementation(Dependencies.MATERIAL)
-    implementation(Dependencies.CONSTRAIN_LAYOUT)
+    implementation(Dependencies.CONSTRAINT_LAYOUT)
     implementation(Dependencies.NAVIGATION_FRAGMENT)
     implementation(Dependencies.TIMBER)
     implementation(Dependencies.LOGGING)
