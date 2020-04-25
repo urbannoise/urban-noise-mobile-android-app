@@ -16,13 +16,13 @@
  */
 
 include(
-    BuildModules.APP,
-    BuildModules.BASE_ANDROID,
-    BuildModules.Features.SPLASHSCREEN,
-    BuildModules.Features.TUTORIAL,
-    BuildModules.Features.DASHBOARD,
-    BuildModules.Libraries.DATABASE,
-    BuildModules.Libraries.NETWORK
+    ":app",
+    ":base-android",
+    ":features:splashscreen",
+    ":features:tutorial",
+    ":features:dashboard",
+    ":libraries:database",
+    ":libraries:network"
 )
 
 rootProject.buildFileName = "build.gradle.kts"

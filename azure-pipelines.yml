@@ -10,9 +10,6 @@ pool:
   vmImage: 'macos-latest'
 
 steps:
-- script: echo "fabric.secret=$(FABRIC_SECRET)" >> local.properties
-- script: echo "fabric.key=$(FABRIC_KEY)" >> local.properties
-
 - task: Gradle@2
   inputs:
     workingDirectory: ''
