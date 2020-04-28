@@ -43,6 +43,7 @@ object PluginsVersions {
     const val KTLINT = "0.36.0"
     const val SPOTLESS = "3.28.1"
     const val DETEKT = "1.8.0"
+    const val SONARQUBE = "2.8"
 }
 
 dependencies {
@@ -56,4 +57,5 @@ dependencies {
     implementation("com.pinterest:ktlint:${PluginsVersions.KTLINT}")
     implementation("com.diffplug.spotless:spotless-plugin-gradle:${PluginsVersions.SPOTLESS}")
     implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${PluginsVersions.DETEKT}")
+    implementation("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:${PluginsVersions.SONARQUBE}")
 }
