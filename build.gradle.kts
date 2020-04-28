@@ -26,5 +26,6 @@ allprojects {
     plugins.apply(BuildPlugins.DETEKT)
     plugins.apply(BuildPlugins.DOKKA)
     plugins.apply(BuildPlugins.KTLINT)
+    plugins.apply(BuildPlugins.SONARQUBE)
     plugins.apply(BuildPlugins.SPOTLESS)
 }
