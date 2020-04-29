@@ -6,6 +6,6 @@
     app:startDestination="@+id/splashscreenFragment"
     tools:ignore="UnusedIds">
     <fragment android:id="@+id/splashscreenFragment"
-        android:name="com.urban.noise.feature.splashscreen.ui.SplashscreenFragment"
+        android:name="org.urban.noise.feature.splashscreen.ui.SplashscreenFragment"
         android:label="SplashscreenFragment"/>
 </navigation>
