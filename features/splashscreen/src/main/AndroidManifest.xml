@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
-    package="com.urban.noise.feature.splashscreen">
+    package="org.urban.noise.feature.splashscreen">
 
     <dist:module
         dist:instant="true"
@@ -11,4 +11,3 @@
         <dist:fusing dist:include="false" />
     </dist:module>
 </manifest>
-
