@@ -18,9 +18,9 @@
 package org.urban.noise.base.android.di
 
 import android.content.Context
-import org.urban.noise.base.android.di.modules.ContextModule
 import dagger.Component
 import javax.inject.Singleton
+import org.urban.noise.base.android.di.modules.ContextModule
 
 /**
  * Core component that all module's components depend on.
