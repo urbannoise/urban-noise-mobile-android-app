@@ -17,12 +17,12 @@
 
 package org.urban.noise.feature.splashscreen.ui.di
 
+import dagger.Module
+import dagger.Provides
 import org.urban.noise.base.android.di.scopes.FeatureScope
 import org.urban.noise.base.android.extensions.viewModel
 import org.urban.noise.feature.splashscreen.ui.SplashscreenFragment
 import org.urban.noise.feature.splashscreen.ui.SplashscreenViewModel
-import dagger.Module
-import dagger.Provides
 
 @Module
 class SplashscreenModule(private val fragment: SplashscreenFragment) {

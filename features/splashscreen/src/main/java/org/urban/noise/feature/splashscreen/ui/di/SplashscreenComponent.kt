@@ -17,10 +17,10 @@
 
 package org.urban.noise.feature.splashscreen.ui.di
 
+import dagger.Component
 import org.urban.noise.base.android.di.CoreComponent
 import org.urban.noise.base.android.di.scopes.FeatureScope
 import org.urban.noise.feature.splashscreen.ui.SplashscreenFragment
-import dagger.Component
 
 @FeatureScope
 @Component(
