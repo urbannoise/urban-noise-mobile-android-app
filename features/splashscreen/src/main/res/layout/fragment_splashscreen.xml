@@ -5,7 +5,7 @@
 
         <variable
             name="viewModel"
-            type="com.urban.noise.feature.splashscreen.ui.SplashscreenViewModel" />
+            type="org.urban.noise.feature.splashscreen.ui.SplashscreenViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

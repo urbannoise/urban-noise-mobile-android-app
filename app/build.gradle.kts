@@ -31,7 +31,7 @@ plugins {
 
 allOpen {
     // allows mocking for classes w/o directly opening them for release builds
-    annotation("com.urban.noise.base.android.annotations.OpenClass")
+    annotation("org.urban.noise.base.android.annotations.OpenClass")
 }
 
 android {
