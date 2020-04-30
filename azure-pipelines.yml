@@ -4,17 +4,93 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
 
 trigger:
-- master
+  - master
+  - release/*
 
 pool:
   vmImage: 'macos-latest'
 
 steps:
-- task: Gradle@2
-  inputs:
-    workingDirectory: ''
-    gradleWrapperFile: 'gradlew'
-    gradleOptions: '-Xmx3072m'
-    publishJUnitResults: false
-    testResultsFiles: '**/TEST-*.xml'
-    tasks: 'detekt ktlint lintDevDebug spotlessKotlinCheck testDevDebugUnitTest'
+  # Detekt
+  - task: Gradle@2
+    displayName: Detekt
+    inputs:
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      gradleOptions: '-Xmx3072m'
+      publishJUnitResults: false
+      testResultsFiles: '**/TEST-*.xml'
+      tasks: 'detekt'
+
+  # Ktlint
+  - task: Gradle@2
+    displayName: Ktlint
+    inputs:
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      gradleOptions: '-Xmx3072m'
+      publishJUnitResults: false
+      testResultsFiles: '**/TEST-*.xml'
+      tasks: 'ktlint'
+
+  # AndroidLint
+  - task: Gradle@2
+    displayName: AndroidLint
+    inputs:
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      gradleOptions: '-Xmx3072m'
+      publishJUnitResults: false
+      testResultsFiles: '**/TEST-*.xml'
+      tasks: 'lintDevDebug'
+
+  # Spotless
+  - task: Gradle@2
+    displayName: AndroidLint
+    inputs:
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      gradleOptions: '-Xmx3072m'
+      publishJUnitResults: false
+      testResultsFiles: '**/TEST-*.xml'
+      tasks: 'spotlessCheck'
+
+  # UnitTests
+  - task: Gradle@2
+    displayName: UnitTests
+    inputs:
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      gradleOptions: '-Xmx3072m'
+      publishJUnitResults: false
+      testResultsFiles: '**/TEST-*.xml'
+      tasks: 'testDevDebugUnitTest'
+
+  # Coverage
+  - task: Gradle@2
+    displayName: UnitTests
+    inputs:
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      gradleOptions: '-Xmx3072m'
+      publishJUnitResults: false
+      testResultsFiles: '**/TEST-*.xml'
+      tasks: 'jacocoTestReportDevDebug'
+
+  # SonarCloud preparations
+  - task: SonarCloudPrepare@1
+    displayName: SonarCloud preparations
+    inputs:
+      SonarCloud: 'SonarCloud Azure DevOps'
+      organization: 'urbannoise'
+      scannerMode: 'Other'
+
+  # SonarCloud analysis
+  - task: SonarCloudAnalyze@1
+    displayName: SonarCloud analysis
+
+  # SonarCloud publish the results
+  - task: SonarCloudPublish@1
+    displayName: Sonarcloud publish the results
+    inputs:
+      pollingTimeoutSec: '1000'
