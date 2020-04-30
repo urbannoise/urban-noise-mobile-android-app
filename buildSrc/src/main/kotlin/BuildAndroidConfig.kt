@@ -18,7 +18,7 @@
  * Configuration of android build
  */
 object BuildAndroidConfig {
-    const val APPLICATION_ID = "com.urban.noise"
+    const val APPLICATION_ID = "org.urban.noise"
 
     const val BUILD_TOOLS_VERSION = "29.0.0"
     const val COMPILE_SDK_VERSION = 29

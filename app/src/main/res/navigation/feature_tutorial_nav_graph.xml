@@ -6,6 +6,6 @@
     app:startDestination="@+id/tutorialFragment"
     tools:ignore="UnusedIds">
     <fragment android:id="@+id/tutorialFragment"
-        android:name="com.urban.noise.feature.tutorial.TutorialFragment"
+        android:name="org.urban.noise.feature.tutorial.TutorialFragment"
         android:label="TutorialFragment"/>
 </navigation>
