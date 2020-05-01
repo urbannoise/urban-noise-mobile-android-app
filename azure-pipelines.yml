@@ -11,16 +11,22 @@ pool:
   vmImage: 'macos-latest'
 
 steps:
-  # Detekt
+  # Config environment vars
+  - script: echo "sonar.host.url=$(SONAR_HOST_URL)" >> local.properties
+  - script: echo "sonar.login=$(SONAR_LOGIN)" >> local.properties
+  - script: echo "sonar.projectKey=$(SONAR_PROJECT_KEY)" >> local.properties
+  - script: echo "sonar.organization=$(SONAR_ORGANIZATION)" >> local.properties
+
+  # Spotless
   - task: Gradle@2
-    displayName: Detekt
+    displayName: Spotless
     inputs:
       workingDirectory: ''
       gradleWrapperFile: 'gradlew'
       gradleOptions: '-Xmx3072m'
       publishJUnitResults: false
       testResultsFiles: '**/TEST-*.xml'
-      tasks: 'detekt'
+      tasks: 'spotlessCheck'
 
   # Ktlint
   - task: Gradle@2
@@ -33,6 +39,17 @@ steps:
       testResultsFiles: '**/TEST-*.xml'
       tasks: 'ktlint'
 
+  # Detekt
+  - task: Gradle@2
+    displayName: Detekt
+    inputs:
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      gradleOptions: '-Xmx3072m'
+      publishJUnitResults: false
+      testResultsFiles: '**/TEST-*.xml'
+      tasks: 'detekt'
+
   # AndroidLint
   - task: Gradle@2
     displayName: AndroidLint
@@ -43,17 +60,6 @@ steps:
       publishJUnitResults: false
       testResultsFiles: '**/TEST-*.xml'
       tasks: 'lintDevDebug'
-
-  # Spotless
-  - task: Gradle@2
-    displayName: AndroidLint
-    inputs:
-      workingDirectory: ''
-      gradleWrapperFile: 'gradlew'
-      gradleOptions: '-Xmx3072m'
-      publishJUnitResults: false
-      testResultsFiles: '**/TEST-*.xml'
-      tasks: 'spotlessCheck'
 
   # UnitTests
   - task: Gradle@2
@@ -68,7 +74,7 @@ steps:
 
   # Coverage
   - task: Gradle@2
-    displayName: UnitTests
+    displayName: Coverage
     inputs:
       workingDirectory: ''
       gradleWrapperFile: 'gradlew'
@@ -86,8 +92,15 @@ steps:
       scannerMode: 'Other'
 
   # SonarCloud analysis
-  - task: SonarCloudAnalyze@1
+  - task: Gradle@2
     displayName: SonarCloud analysis
+    inputs:
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      gradleOptions: '-Xmx3072m'
+      publishJUnitResults: false
+      testResultsFiles: '**/TEST-*.xml'
+      tasks: 'sonarqube'
 
   # SonarCloud publish the results
   - task: SonarCloudPublish@1
