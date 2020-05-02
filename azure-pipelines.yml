@@ -5,17 +5,18 @@
 
 trigger:
   - master
-  - release/*
 
 pool:
   vmImage: 'macos-latest'
 
 steps:
   # Config environment vars
-  - script: echo "sonar.host.url=$(SONAR_HOST_URL)" >> local.properties
-  - script: echo "sonar.login=$(SONAR_LOGIN)" >> local.properties
-  - script: echo "sonar.projectKey=$(SONAR_PROJECT_KEY)" >> local.properties
-  - script: echo "sonar.organization=$(SONAR_ORGANIZATION)" >> local.properties
+  - script: |
+      echo "sonar.host.url=$(SONAR_HOST_URL)" >> local.properties
+      echo "sonar.login=$(SONAR_LOGIN)" >> local.properties
+      echo "sonar.projectKey=$(SONAR_PROJECT_KEY)" >> local.properties
+      echo "sonar.organization=$(SONAR_ORGANIZATION)" >> local.properties
+    displayName: 'Config environment vars'
 
   # Spotless
   - task: Gradle@2
