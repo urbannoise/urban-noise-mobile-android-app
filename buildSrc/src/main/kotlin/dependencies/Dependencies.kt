@@ -42,7 +42,6 @@ object Dependencies {
     const val MOSHI = "com.squareup.moshi:moshi:${BuildDependenciesVersions.MOSHI}"
     const val MOSHI_KTX = "com.squareup.moshi:moshi-kotlin:${BuildDependenciesVersions.MOSHI}"
     const val GLIDE = "com.github.bumptech.glide:glide:${BuildDependenciesVersions.GLIDE}"
-    const val CRASHLYTICS = "com.crashlytics.sdk.android:crashlytics:${BuildDependenciesVersions.CRASHLYTICS}"
     const val PLAY_CORE = "com.google.android.play:core:${BuildDependenciesVersions.PLAY_CORE}"
     const val FIREBASE_ANALYTICS = "com.google.firebase:firebase-analytics:${BuildDependenciesVersions.FIREBASE}"
     const val GMS_MAPS = "com.google.android.gms:play-services-maps:${BuildDependenciesVersions.GMS_MAPS}"
