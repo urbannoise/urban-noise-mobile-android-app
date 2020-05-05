@@ -35,7 +35,6 @@ dependencies {
     implementation(Dependencies.NAVIGATION_FRAGMENT)
     implementation(Dependencies.NAVIGATION_UI)
     implementation(Dependencies.GLIDE)
-    implementation(Dependencies.CRASHLYTICS)
     implementation(Dependencies.DAGGER)
     implementation(Dependencies.TIMBER)
 
