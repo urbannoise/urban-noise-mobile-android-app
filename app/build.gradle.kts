@@ -27,6 +27,7 @@ plugins {
     id(BuildPlugins.KOTLIN_ALLOPEN)
     id(BuildPlugins.NAVIGATION_SAFE_ARGS)
     id(BuildPlugins.JACOCO)
+    id(BuildPlugins.GOOGLE_SERVICES)
 }
 
 allOpen {
