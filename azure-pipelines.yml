@@ -4,17 +4,107 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
 
 trigger:
-- master
+  - master
 
 pool:
   vmImage: 'macos-latest'
 
 steps:
-- task: Gradle@2
-  inputs:
-    workingDirectory: ''
-    gradleWrapperFile: 'gradlew'
-    gradleOptions: '-Xmx3072m'
-    publishJUnitResults: false
-    testResultsFiles: '**/TEST-*.xml'
-    tasks: 'detekt ktlint lintDevDebug spotlessKotlinCheck testDevDebugUnitTest'
+  # Config environment vars
+  - script: |
+      echo "sonar.host.url=$(SONAR_HOST_URL)" >> local.properties
+      echo "sonar.login=$(SONAR_LOGIN)" >> local.properties
+      echo "sonar.projectKey=$(SONAR_PROJECT_KEY)" >> local.properties
+      echo "sonar.organization=$(SONAR_ORGANIZATION)" >> local.properties
+    displayName: 'Config environment vars'
+
+  # Spotless
+  - task: Gradle@2
+    displayName: Spotless
+    inputs:
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      gradleOptions: '-Xmx3072m'
+      publishJUnitResults: false
+      testResultsFiles: '**/TEST-*.xml'
+      tasks: 'spotlessCheck'
+
+  # Ktlint
+  - task: Gradle@2
+    displayName: Ktlint
+    inputs:
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      gradleOptions: '-Xmx3072m'
+      publishJUnitResults: false
+      testResultsFiles: '**/TEST-*.xml'
+      tasks: 'ktlint'
+
+  # Detekt
+  - task: Gradle@2
+    displayName: Detekt
+    inputs:
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      gradleOptions: '-Xmx3072m'
+      publishJUnitResults: false
+      testResultsFiles: '**/TEST-*.xml'
+      tasks: 'detekt'
+
+  # AndroidLint
+  - task: Gradle@2
+    displayName: AndroidLint
+    inputs:
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      gradleOptions: '-Xmx3072m'
+      publishJUnitResults: false
+      testResultsFiles: '**/TEST-*.xml'
+      tasks: 'lintDevDebug'
+
+  # UnitTests
+  - task: Gradle@2
+    displayName: UnitTests
+    inputs:
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      gradleOptions: '-Xmx3072m'
+      publishJUnitResults: false
+      testResultsFiles: '**/TEST-*.xml'
+      tasks: 'testDevDebugUnitTest'
+
+  # Coverage
+  - task: Gradle@2
+    displayName: Coverage
+    inputs:
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      gradleOptions: '-Xmx3072m'
+      publishJUnitResults: false
+      testResultsFiles: '**/TEST-*.xml'
+      tasks: 'jacocoTestReportDevDebug'
+
+  # SonarCloud preparations
+  - task: SonarCloudPrepare@1
+    displayName: SonarCloud preparations
+    inputs:
+      SonarCloud: 'SonarCloud Azure DevOps'
+      organization: 'urbannoise'
+      scannerMode: 'Other'
+
+  # SonarCloud analysis
+  - task: Gradle@2
+    displayName: SonarCloud analysis
+    inputs:
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      gradleOptions: '-Xmx3072m'
+      publishJUnitResults: false
+      testResultsFiles: '**/TEST-*.xml'
+      tasks: 'sonarqube'
+
+  # SonarCloud publish the results
+  - task: SonarCloudPublish@1
+    displayName: Sonarcloud publish the results
+    inputs:
+      pollingTimeoutSec: '1000'
