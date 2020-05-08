@@ -38,6 +38,7 @@ object BuildDependenciesVersions {
     const val LEAKCANARY = "2.2"
     const val DATABINDING = "3.1.4"
     const val FIREBASE_ANALYTICS = "17.4.0"
+    const val FIREBASE_CRASHLYTICS = "17.0.0"
     const val PLAY_CORE = "1.7.2"
     const val GMS_MAPS = "17.0.0"
 

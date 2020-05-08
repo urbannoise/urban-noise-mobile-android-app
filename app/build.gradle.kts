@@ -28,6 +28,7 @@ plugins {
     id(BuildPlugins.NAVIGATION_SAFE_ARGS)
     id(BuildPlugins.JACOCO)
     id(BuildPlugins.GOOGLE_SERVICES)
+    id(BuildPlugins.FIREBASE_CRASHLYTICS)
 }
 
 allOpen {
@@ -137,6 +138,7 @@ dependencies {
     implementation(Dependencies.LOGGING)
     implementation(Dependencies.PLAY_CORE)
     implementation(Dependencies.FIREBASE_ANALYTICS)
+    implementation(Dependencies.FIREBASE_CRASHLYTICS)
     implementation(Dependencies.GMS_MAPS)
 
     debugImplementation(DebugDependencies.LEAKCANARY)
