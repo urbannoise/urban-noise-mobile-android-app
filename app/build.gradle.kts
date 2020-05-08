@@ -29,6 +29,7 @@ plugins {
     id(BuildPlugins.JACOCO)
     id(BuildPlugins.GOOGLE_SERVICES)
     id(BuildPlugins.FIREBASE_CRASHLYTICS)
+    id(BuildPlugins.FIREBASE_PERFORMANCE)
 }
 
 allOpen {
@@ -139,6 +140,7 @@ dependencies {
     implementation(Dependencies.PLAY_CORE)
     implementation(Dependencies.FIREBASE_ANALYTICS)
     implementation(Dependencies.FIREBASE_CRASHLYTICS)
+    implementation(Dependencies.FIREBASE_PERFORMANCE)
     implementation(Dependencies.GMS_MAPS)
 
     debugImplementation(DebugDependencies.LEAKCANARY)

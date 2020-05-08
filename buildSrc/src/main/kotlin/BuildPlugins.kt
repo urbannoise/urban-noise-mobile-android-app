@@ -32,6 +32,7 @@ object BuildPlugins {
     const val JACOCO = "com.vanniktech.android.junit.jacoco"
     const val GOOGLE_SERVICES = "com.google.gms.google-services"
     const val FIREBASE_CRASHLYTICS = "com.google.firebase.crashlytics"
+    const val FIREBASE_PERFORMANCE = "com.google.firebase.firebase-perf"
 
     const val DETEKT = "plugins.detekt"
     const val DOKKA = "plugins.dokka"
