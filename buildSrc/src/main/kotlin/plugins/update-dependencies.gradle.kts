@@ -15,17 +15,22 @@
  * limitations under the License.
  */
 
-import extensions.applyDefault
+package plugins
 
-plugins.apply(BuildPlugins.GIT_HOOKS)
-plugins.apply(BuildPlugins.UPDATE_DEPENDENCIES)
+import com.github.benmanes.gradle.versions.VersionsPlugin
+import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
-allprojects {
-    repositories.applyDefault()
+apply<VersionsPlugin>()
 
-    plugins.apply(BuildPlugins.DETEKT)
-    plugins.apply(BuildPlugins.DOKKA)
-    plugins.apply(BuildPlugins.KTLINT)
-    plugins.apply(BuildPlugins.SONARQUBE)
-    plugins.apply(BuildPlugins.SPOTLESS)
+tasks.withType<DependencyUpdatesTask> {
+    rejectVersionIf {
+        isNonStable(candidate.version)
+    }
+}
+
+fun isNonStable(version: String): Boolean {
+    val stableKeyword = listOf("RELEASE", "FINAL", "GA").any { version.toUpperCase().contains(it) }
+    val regex = "^[0-9,.v-]+(-r)?$".toRegex()
+    val isStable = stableKeyword || regex.matches(version)
+    return isStable.not()
 }
