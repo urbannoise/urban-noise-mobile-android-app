@@ -38,4 +38,5 @@ object BuildPlugins {
     const val KTLINT = "plugins.ktlint"
     const val SPOTLESS = "plugins.spotless"
     const val SONARQUBE = "plugins.sonarqube"
+    const val UPDATE_DEPENDENCIES = "plugins.update-dependencies"
 }
