@@ -44,6 +44,9 @@ object PluginsVersions {
     const val SPOTLESS = "3.28.1"
     const val DETEKT = "1.8.0"
     const val SONARQUBE = "2.8"
+    const val GOOGLE_SERVICES = "4.3.3"
+    const val FIREBASE_CRASHLYTICS = "2.0.0"
+    const val FIREBASE_PERFORMANCE = "1.3.1"
 }
 
 dependencies {
@@ -58,4 +61,7 @@ dependencies {
     implementation("com.diffplug.spotless:spotless-plugin-gradle:${PluginsVersions.SPOTLESS}")
     implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${PluginsVersions.DETEKT}")
     implementation("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:${PluginsVersions.SONARQUBE}")
+    implementation("com.google.gms:google-services:${PluginsVersions.GOOGLE_SERVICES}")
+    implementation("com.google.firebase:firebase-crashlytics-gradle:${PluginsVersions.FIREBASE_CRASHLYTICS}")
+    implementation("com.google.firebase:perf-plugin:${PluginsVersions.FIREBASE_PERFORMANCE}")
 }
