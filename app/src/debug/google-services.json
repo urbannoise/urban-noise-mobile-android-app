@@ -8,6 +8,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:347967463726:android:ab66cca277b929b6b1dabf",
+        "android_client_info": {
+          "package_name": "org.urban.noise.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "347967463726-860o8df514241lk7sd2fbdt93guijnsk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGDyxtEpTx4cWtq27cRaX1YGE4zGHviNc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "347967463726-860o8df514241lk7sd2fbdt93guijnsk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:347967463726:android:0eccb7e9e848cc2cb1dabf",
         "android_client_info": {
           "package_name": "org.urban.noise.dev.debug"
