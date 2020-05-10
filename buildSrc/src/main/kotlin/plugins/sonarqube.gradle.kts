@@ -24,6 +24,7 @@ import org.sonarqube.gradle.SonarQubePlugin
 apply<SonarQubePlugin>()
 
 configure<SonarQubeExtension> {
+    setAndroidVariant("devDebug")
     properties {
         property("sonar.projectKey", getLocalProperty("sonar.projectKey", project))
         property("sonar.organization", getLocalProperty("sonar.organization", project))

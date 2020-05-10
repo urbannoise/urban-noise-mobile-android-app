@@ -27,6 +27,9 @@ plugins {
     id(BuildPlugins.KOTLIN_ALLOPEN)
     id(BuildPlugins.NAVIGATION_SAFE_ARGS)
     id(BuildPlugins.JACOCO)
+    id(BuildPlugins.GOOGLE_SERVICES)
+    id(BuildPlugins.FIREBASE_CRASHLYTICS)
+    id(BuildPlugins.FIREBASE_PERFORMANCE)
 }
 
 allOpen {
@@ -134,9 +137,10 @@ dependencies {
     implementation(Dependencies.NAVIGATION_FRAGMENT)
     implementation(Dependencies.TIMBER)
     implementation(Dependencies.LOGGING)
-    implementation(Dependencies.CRASHLYTICS)
     implementation(Dependencies.PLAY_CORE)
     implementation(Dependencies.FIREBASE_ANALYTICS)
+    implementation(Dependencies.FIREBASE_CRASHLYTICS)
+    implementation(Dependencies.FIREBASE_PERFORMANCE)
     implementation(Dependencies.GMS_MAPS)
 
     debugImplementation(DebugDependencies.LEAKCANARY)
