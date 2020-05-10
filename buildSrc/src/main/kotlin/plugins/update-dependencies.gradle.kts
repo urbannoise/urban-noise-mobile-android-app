@@ -22,20 +22,15 @@ import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 apply<VersionsPlugin>()
 
-tasks {
-    withType<DependencyUpdatesTask> {
-        resolutionStrategy {
-            componentSelection {
-                all {
-                    val rejected = listOf("alpha", "beta", "rc", "cr", "m", "preview", "b", "ea")
-                        .map { qualifier -> Regex("(?i).*[.-]$qualifier[.\\d-+]*") }
-                        .any { it.matches(candidate.version) }
-
-                    if (rejected) {
-                        reject("Release candidate")
-                    }
-                }
-            }
-        }
+tasks.withType<DependencyUpdatesTask> {
+    rejectVersionIf {
+        isNonStable(candidate.version)
     }
+}
+
+fun isNonStable(version: String): Boolean {
+    val stableKeyword = listOf("RELEASE", "FINAL", "GA").any { version.toUpperCase().contains(it) }
+    val regex = "^[0-9,.v-]+(-r)?$".toRegex()
+    val isStable = stableKeyword || regex.matches(version)
+    return isStable.not()
 }
