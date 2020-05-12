@@ -1,5 +1,5 @@
 # urban-noise-mobile-android-app
-[![Build Status](https://dev.azure.com/davidpereiracostoya/UrbanNoise/_apis/build/status/urbannoise.urban-noise-mobile-android-app?branchName=master)](https://dev.azure.com/davidpereiracostoya/UrbanNoise/_build/latest?definitionId=2&branchName=master)
+[![Build Status](https://dev.azure.com/davidpereiracostoya/UrbanNoise/_apis/build/status/urbannoise-mobile-android-app-build?branchName=master)](https://dev.azure.com/davidpereiracostoya/UrbanNoise/_build/latest?definitionId=17&branchName=master)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=urbannoise_urban-noise-mobile-android-app&metric=alert_status)](https://sonarcloud.io/dashboard?id=urbannoise_urban-noise-mobile-android-app)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=urbannoise_urban-noise-mobile-android-app&metric=coverage)](https://sonarcloud.io/dashboard?id=urbannoise_urban-noise-mobile-android-app)
 [![Kotlin Version](https://img.shields.io/badge/kotlin-1.3.72-blue.svg)](http://kotlinlang.org/)
