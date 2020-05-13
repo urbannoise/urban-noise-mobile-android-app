@@ -32,7 +32,7 @@ dependencies {
     implementation(Dependencies.FRAGMENT_KTX)
     implementation(Dependencies.CONSTRAINT_LAYOUT)
     implementation(Dependencies.RECYCLER_VIEW)
-    implementation(Dependencies.NAVIGATION_FRAGMENT)
+    implementation(Dependencies.NAVIGATION_DYNAMIC_FRAGMENT)
     implementation(Dependencies.NAVIGATION_UI)
     implementation(Dependencies.GLIDE)
     implementation(Dependencies.DAGGER)
