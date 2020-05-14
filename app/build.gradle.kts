@@ -17,7 +17,8 @@
 
 import dependencies.Dependencies
 import dependencies.DebugDependencies
-import extensions.*
+import dependencies.AnnotationProcessorsDependencies
+import extensions.addTestsDependencies
 
 plugins {
     id(BuildPlugins.ANDROID_APPLICATION)
@@ -130,18 +131,29 @@ junitJacoco {
 dependencies {
     implementation(project(BuildModules.BASE_ANDROID))
 
-    implementation(Dependencies.KOTLIN)
-    implementation(Dependencies.APPCOMPAT)
-    implementation(Dependencies.MATERIAL)
-    implementation(Dependencies.CONSTRAINT_LAYOUT)
-    implementation(Dependencies.NAVIGATION_DYNAMIC_FRAGMENT)
-    implementation(Dependencies.TIMBER)
+    api(Dependencies.KOTLIN)
+    api(Dependencies.APPCOMPAT)
+    api(Dependencies.MATERIAL)
+    api(Dependencies.COROUTINES)
+    api(Dependencies.COROUTINES_ANDROID)
+    api(Dependencies.CONSTRAINT_LAYOUT)
+    api(Dependencies.LIFECYCLE_EXTENSIONS)
+    api(Dependencies.LIFECYCLE_VIEWMODEL)
+    api(Dependencies.CORE_KTX)
+    api(Dependencies.FRAGMENT_KTX)
+    api(Dependencies.NAVIGATION_DYNAMIC_FRAGMENT)
+    api(Dependencies.TIMBER)
+    api(Dependencies.DAGGER)
+
     implementation(Dependencies.LOGGING)
     implementation(Dependencies.PLAY_CORE)
     implementation(Dependencies.FIREBASE_ANALYTICS)
     implementation(Dependencies.FIREBASE_CRASHLYTICS)
     implementation(Dependencies.FIREBASE_PERFORMANCE)
     implementation(Dependencies.GMS_MAPS)
+
+    kapt(AnnotationProcessorsDependencies.DAGGER)
+    kapt(AnnotationProcessorsDependencies.DATABINDING)
 
     debugImplementation(DebugDependencies.LEAKCANARY)
 
