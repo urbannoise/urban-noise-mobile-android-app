@@ -15,8 +15,6 @@
  * limitations under the License.
  */
 
-import extensions.implementation
-import extensions.kapt
 import dependencies.Dependencies
 import dependencies.AnnotationProcessorsDependencies
 import extensions.addTestsDependencies
