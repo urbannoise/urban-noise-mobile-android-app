@@ -47,6 +47,7 @@ object PluginsVersions {
     const val GOOGLE_SERVICES = "4.3.3"
     const val FIREBASE_CRASHLYTICS = "2.0.0"
     const val FIREBASE_PERFORMANCE = "1.3.1"
+    const val PLAY_PUBLISHER = "2.7.5"
 }
 
 dependencies {
@@ -64,4 +65,5 @@ dependencies {
     implementation("com.google.gms:google-services:${PluginsVersions.GOOGLE_SERVICES}")
     implementation("com.google.firebase:firebase-crashlytics-gradle:${PluginsVersions.FIREBASE_CRASHLYTICS}")
     implementation("com.google.firebase:perf-plugin:${PluginsVersions.FIREBASE_PERFORMANCE}")
+    implementation("com.github.triplet.gradle:play-publisher:${PluginsVersions.PLAY_PUBLISHER}")
 }
