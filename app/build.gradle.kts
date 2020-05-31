@@ -141,6 +141,10 @@ play {
     serviceAccountCredentials = file(getLocalProperty("play.publisher.service.file", project))
     track = getLocalProperty("play.publisher.track", project)
     defaultToAppBundles = true
+    resolutionStrategy = "auto"
+    outputProcessor {
+        versionNameOverride = "$versionNameOverride.$versionCode"
+    }
 }
 
 junitJacoco {
