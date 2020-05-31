@@ -19,6 +19,7 @@ import dependencies.Dependencies
 import dependencies.DebugDependencies
 import dependencies.AnnotationProcessorsDependencies
 import extensions.addTestsDependencies
+import utils.getLocalProperty
 
 plugins {
     id(BuildPlugins.ANDROID_APPLICATION)
@@ -31,6 +32,7 @@ plugins {
     id(BuildPlugins.GOOGLE_SERVICES)
     id(BuildPlugins.FIREBASE_CRASHLYTICS)
     id(BuildPlugins.FIREBASE_PERFORMANCE)
+    id(BuildPlugins.PLAY_PUBLISHER)
 }
 
 allOpen {
@@ -51,7 +53,17 @@ android {
 
         vectorDrawables.useSupportLibrary = BuildAndroidConfig.SUPPORT_LIBRARY_VECTOR_DRAWABLES
         testInstrumentationRunner = BuildAndroidConfig.TEST_INSTRUMENTATION_RUNNER
-        testInstrumentationRunnerArguments = BuildAndroidConfig.TEST_INSTRUMENTATION_RUNNER_ARGUMENTS
+        testInstrumentationRunnerArguments =
+            BuildAndroidConfig.TEST_INSTRUMENTATION_RUNNER_ARGUMENTS
+    }
+
+    signingConfigs {
+        create(BuildType.RELEASE) {
+            storeFile = file(getLocalProperty("sign.store.file", project))
+            storePassword = getLocalProperty("sign.store.password", project)
+            keyAlias = getLocalProperty("sign.key.alias", project)
+            keyPassword = getLocalProperty("sign.key.password", project)
+        }
     }
 
     buildTypes {
@@ -60,6 +72,7 @@ android {
 
             isMinifyEnabled = BuildTypeRelease.isMinifyEnabled
             isTestCoverageEnabled = BuildTypeRelease.isTestCoverageEnabled
+            signingConfig = signingConfigs.getByName(BuildType.RELEASE)
         }
 
         getByName(BuildType.DEBUG) {
@@ -122,6 +135,12 @@ android {
             java.srcDir("src/androidTest/kotlin")
         }
     }
+}
+
+play {
+    serviceAccountCredentials = file(getLocalProperty("play.publisher.service.file", project))
+    track = getLocalProperty("play.publisher.track", project)
+    defaultToAppBundles = true
 }
 
 junitJacoco {
