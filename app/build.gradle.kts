@@ -144,6 +144,8 @@ play {
     resolutionStrategy = "auto"
     outputProcessor {
         versionNameOverride = "$versionNameOverride.$versionCode"
+        val versionNameFile = "version.txt"
+        rootProject.file(versionNameFile).writeText(versionNameOverride)
     }
 }
 
