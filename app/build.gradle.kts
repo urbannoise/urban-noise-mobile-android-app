@@ -96,8 +96,8 @@ android {
         BuildModules.Features.DASHBOARD
     )
 
-    dataBinding {
-        isEnabled = true
+    buildFeatures{
+        dataBinding = true
     }
 
     androidExtensions {
