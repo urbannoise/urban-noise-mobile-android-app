@@ -22,8 +22,6 @@ import BuildProductDimensions
 import ProductFlavorDevelop
 import ProductFlavorProduction
 import ProductFlavorQA
-import dependencies.Dependencies
-import dependencies.AnnotationProcessorsDependencies
 import extensions.addTestsDependencies
 
 plugins {
