@@ -17,7 +17,9 @@
 
 import dependencies.Dependencies
 import dependencies.DebugDependencies
-import extensions.*
+import dependencies.AnnotationProcessorsDependencies
+import extensions.addTestsDependencies
+import utils.getLocalProperty
 
 plugins {
     id(BuildPlugins.ANDROID_APPLICATION)
@@ -30,6 +32,7 @@ plugins {
     id(BuildPlugins.GOOGLE_SERVICES)
     id(BuildPlugins.FIREBASE_CRASHLYTICS)
     id(BuildPlugins.FIREBASE_PERFORMANCE)
+    id(BuildPlugins.PLAY_PUBLISHER)
 }
 
 allOpen {
@@ -50,7 +53,17 @@ android {
 
         vectorDrawables.useSupportLibrary = BuildAndroidConfig.SUPPORT_LIBRARY_VECTOR_DRAWABLES
         testInstrumentationRunner = BuildAndroidConfig.TEST_INSTRUMENTATION_RUNNER
-        testInstrumentationRunnerArguments = BuildAndroidConfig.TEST_INSTRUMENTATION_RUNNER_ARGUMENTS
+        testInstrumentationRunnerArguments =
+            BuildAndroidConfig.TEST_INSTRUMENTATION_RUNNER_ARGUMENTS
+    }
+
+    signingConfigs {
+        create(BuildType.RELEASE) {
+            storeFile = file(getLocalProperty("sign.store.file", project))
+            storePassword = getLocalProperty("sign.store.password", project)
+            keyAlias = getLocalProperty("sign.key.alias", project)
+            keyPassword = getLocalProperty("sign.key.password", project)
+        }
     }
 
     buildTypes {
@@ -59,6 +72,7 @@ android {
 
             isMinifyEnabled = BuildTypeRelease.isMinifyEnabled
             isTestCoverageEnabled = BuildTypeRelease.isTestCoverageEnabled
+            signingConfig = signingConfigs.getByName(BuildType.RELEASE)
         }
 
         getByName(BuildType.DEBUG) {
@@ -82,8 +96,8 @@ android {
         BuildModules.Features.DASHBOARD
     )
 
-    dataBinding {
-        isEnabled = true
+    buildFeatures{
+        dataBinding = true
     }
 
     androidExtensions {
@@ -123,6 +137,18 @@ android {
     }
 }
 
+play {
+    serviceAccountCredentials = file(getLocalProperty("play.publisher.service.file", project))
+    track = getLocalProperty("play.publisher.track", project)
+    defaultToAppBundles = true
+    resolutionStrategy = "auto"
+    outputProcessor {
+        versionNameOverride = "$versionNameOverride.$versionCode"
+        val versionNameFile = "version.txt"
+        rootProject.file(versionNameFile).writeText(versionNameOverride)
+    }
+}
+
 junitJacoco {
     includeNoLocationClasses = true
 }
@@ -130,18 +156,29 @@ junitJacoco {
 dependencies {
     implementation(project(BuildModules.BASE_ANDROID))
 
-    implementation(Dependencies.KOTLIN)
-    implementation(Dependencies.APPCOMPAT)
-    implementation(Dependencies.MATERIAL)
-    implementation(Dependencies.CONSTRAINT_LAYOUT)
-    implementation(Dependencies.NAVIGATION_FRAGMENT)
-    implementation(Dependencies.TIMBER)
+    api(Dependencies.KOTLIN)
+    api(Dependencies.APPCOMPAT)
+    api(Dependencies.MATERIAL)
+    api(Dependencies.COROUTINES)
+    api(Dependencies.COROUTINES_ANDROID)
+    api(Dependencies.CONSTRAINT_LAYOUT)
+    api(Dependencies.LIFECYCLE_EXTENSIONS)
+    api(Dependencies.LIFECYCLE_VIEWMODEL)
+    api(Dependencies.CORE_KTX)
+    api(Dependencies.FRAGMENT_KTX)
+    api(Dependencies.NAVIGATION_DYNAMIC_FRAGMENT)
+    api(Dependencies.TIMBER)
+    api(Dependencies.DAGGER)
+
     implementation(Dependencies.LOGGING)
     implementation(Dependencies.PLAY_CORE)
     implementation(Dependencies.FIREBASE_ANALYTICS)
     implementation(Dependencies.FIREBASE_CRASHLYTICS)
     implementation(Dependencies.FIREBASE_PERFORMANCE)
     implementation(Dependencies.GMS_MAPS)
+
+    kapt(AnnotationProcessorsDependencies.DAGGER)
+    kapt(AnnotationProcessorsDependencies.DATABINDING)
 
     debugImplementation(DebugDependencies.LEAKCANARY)
 
