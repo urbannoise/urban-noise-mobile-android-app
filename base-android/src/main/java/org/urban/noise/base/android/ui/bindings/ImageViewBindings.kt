@@ -30,9 +30,11 @@ fun ImageView.imageUrl(url: String?, @DrawableRes placeholderId: Int?) {
         .with(context)
         .load(url)
         .transition(DrawableTransitionOptions.withCrossFade())
-        .placeholder(placeholderId?.let {
-            ContextCompat.getDrawable(context, it)
-        })
+        .placeholder(
+            placeholderId?.let {
+                ContextCompat.getDrawable(context, it)
+            }
+        )
         .centerCrop()
         .into(this)
 }
