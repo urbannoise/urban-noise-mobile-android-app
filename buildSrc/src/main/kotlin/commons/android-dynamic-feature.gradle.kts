@@ -22,11 +22,7 @@ import BuildProductDimensions
 import ProductFlavorDevelop
 import ProductFlavorProduction
 import ProductFlavorQA
-import dependencies.Dependencies
-import dependencies.AnnotationProcessorsDependencies
 import extensions.addTestsDependencies
-import extensions.implementation
-import extensions.kapt
 
 plugins {
     id("com.android.dynamic-feature")
@@ -98,23 +94,6 @@ junitJacoco {
 dependencies {
     implementation(project(BuildModules.APP))
     implementation(project(BuildModules.BASE_ANDROID))
-
-    implementation(Dependencies.KOTLIN)
-    implementation(Dependencies.APPCOMPAT)
-    implementation(Dependencies.COROUTINES)
-    implementation(Dependencies.COROUTINES_ANDROID)
-    implementation(Dependencies.NAVIGATION_FRAGMENT)
-    implementation(Dependencies.NAVIGATION_UI)
-    implementation(Dependencies.LIFECYCLE_EXTENSIONS)
-    implementation(Dependencies.LIFECYCLE_VIEWMODEL)
-    implementation(Dependencies.CORE_KTX)
-    implementation(Dependencies.FRAGMENT_KTX)
-    implementation(Dependencies.CONSTRAINT_LAYOUT)
-    implementation(Dependencies.DAGGER)
-    implementation(Dependencies.TIMBER)
-
-    kapt(AnnotationProcessorsDependencies.DAGGER)
-    kapt(AnnotationProcessorsDependencies.DATABINDING)
 
     addTestsDependencies()
 }

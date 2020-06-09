@@ -1,0 +1,3 @@
+The open-source platform that monitors acoustic pollution in cities, allowing citizens to check the noise history for any area in your city using classified and analyzed data by AI which is provided by our end users and smart sensors that local governments have placed in different points of the city.
+
+Let's find together the silent place in your city!
