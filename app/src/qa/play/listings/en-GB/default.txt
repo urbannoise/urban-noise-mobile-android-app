@@ -1,0 +1,1 @@
+App Released from azure pipeline

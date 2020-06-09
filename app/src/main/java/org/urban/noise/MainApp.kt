@@ -17,6 +17,6 @@
 
 package org.urban.noise
 
-import android.app.Application
+import com.google.android.play.core.splitcompat.SplitCompatApplication
 
-class MainApp : Application()
+class MainApp : SplitCompatApplication()

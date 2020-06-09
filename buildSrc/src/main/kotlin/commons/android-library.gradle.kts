@@ -22,11 +22,6 @@ import BuildProductDimensions
 import ProductFlavorDevelop
 import ProductFlavorProduction
 import ProductFlavorQA
-import dependencies.Dependencies
-import dependencies.AnnotationProcessorsDependencies
-import extensions.addTestsDependencies
-import extensions.implementation
-import extensions.kapt
 
 plugins {
     id("com.android.library")
@@ -54,8 +49,8 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
-    dataBinding {
-        isEnabled = true
+    buildFeatures{
+        dataBinding = true
     }
 
     androidExtensions {
@@ -86,10 +81,4 @@ android {
 
 junitJacoco {
     includeNoLocationClasses = true
-}
-
-dependencies {
-    implementation(Dependencies.KOTLIN)
-
-    addTestsDependencies()
 }

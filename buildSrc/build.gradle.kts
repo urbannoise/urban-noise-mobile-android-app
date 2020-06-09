@@ -34,7 +34,7 @@ kotlinDslPluginOptions {
 }
 
 object PluginsVersions {
-    const val GRADLE_ANDROID = "3.6.3"
+    const val GRADLE_ANDROID = "4.0.0"
     const val GRADLE_VERSIONS = "0.28.0"
     const val KOTLIN = "1.3.72"
     const val NAVIGATION = "2.2.0"
@@ -47,6 +47,7 @@ object PluginsVersions {
     const val GOOGLE_SERVICES = "4.3.3"
     const val FIREBASE_CRASHLYTICS = "2.0.0"
     const val FIREBASE_PERFORMANCE = "1.3.1"
+    const val PLAY_PUBLISHER = "2.7.5"
 }
 
 dependencies {
@@ -64,4 +65,5 @@ dependencies {
     implementation("com.google.gms:google-services:${PluginsVersions.GOOGLE_SERVICES}")
     implementation("com.google.firebase:firebase-crashlytics-gradle:${PluginsVersions.FIREBASE_CRASHLYTICS}")
     implementation("com.google.firebase:perf-plugin:${PluginsVersions.FIREBASE_PERFORMANCE}")
+    implementation("com.github.triplet.gradle:play-publisher:${PluginsVersions.PLAY_PUBLISHER}")
 }
