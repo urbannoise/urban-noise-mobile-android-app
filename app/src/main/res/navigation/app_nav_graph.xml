@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/app_nav_graph.xml"
-    app:startDestination="@id/feature_splashscreen_nav_graph"
-    tools:ignore="InvalidNavigation">
-    <include app:graph="@navigation/feature_splashscreen_nav_graph"/>
-    <include app:graph="@navigation/feature_tutorial_nav_graph"/>
+    app:startDestination="@id/feature_welcome_nav_graph">
+
+    <include app:graph="@navigation/feature_welcome_nav_graph"/>
+    <include app:graph="@navigation/feature_login_nav_graph"/>
     <include app:graph="@navigation/feature_dashboard_nav_graph"/>
+
 </navigation>

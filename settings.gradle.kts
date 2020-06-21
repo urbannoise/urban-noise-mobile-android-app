@@ -18,8 +18,8 @@
 include(
     ":app",
     ":base-android",
-    ":features:splashscreen",
-    ":features:tutorial",
+    ":features:welcome",
+    ":features:login",
     ":features:dashboard",
     ":libraries:database",
     ":libraries:network"

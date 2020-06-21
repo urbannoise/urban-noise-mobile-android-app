@@ -4,7 +4,7 @@
     tools:ignore="UnusedResources" >
 
     <!--Dynamic module titles-->
-    <string name="feature_splashscreen">Splashscreen</string>
-    <string name="feature_tutorial">Tutorial</string>
+    <string name="feature_welcome">Welcome</string>
+    <string name="feature_login">Login</string>
     <string name="feature_dashboard">Dashboard</string>
 </resources>

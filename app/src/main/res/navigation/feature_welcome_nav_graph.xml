@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/feature_welcome_nav_graph"
+    app:startDestination="@+id/splashFragment"
+    tools:ignore="UnusedIds">
+
+    <fragment android:id="@+id/splashFragment"
+        android:name="org.urban.noise.feature.welcome.splash.SplashFragment"
+        android:label="splashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_tutorialFragment"
+            app:destination="@id/tutorialFragment" />
+    </fragment>
+
+    <fragment android:id="@+id/tutorialFragment"
+        android:name="org.urban.noise.feature.welcome.tutorial.TutorialFragment"
+        android:label="TutorialFragment"
+        tools:layout="@layout/fragment_tutorial"/>
+
+    <fragment android:id="@+id/updateFragment"
+        android:name="org.urban.noise.feature.welcome.update.UpdateFragment"
+        android:label="UpdateFragment"
+        tools:layout="@layout/fragment_update"/>
+
+</navigation>

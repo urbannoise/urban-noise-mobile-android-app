@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/feature_login_nav_graph"
+    app:startDestination="@+id/signInFragment"
+    tools:ignore="UnusedIds">
+
+    <fragment android:id="@+id/signInFragment"
+        android:name="org.urban.noise.feature.login.signin.SignInFragment"
+        android:label="SignInFragment"
+        tools:layout="@layout/fragment_signin">
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+    </fragment>
+
+    <fragment android:id="@+id/signUpFragment"
+        android:name="org.urban.noise.feature.login.signup.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_signup"/>
+
+    <fragment android:id="@+id/forgotPasswordFragment"
+        android:name="org.urban.noise.feature.login.forgotpassword.ForgotPasswordFragment"
+        android:label="ForgotPasswordFragment"
+        tools:layout="@layout/fragment_forgot_password"/>
+
+</navigation>

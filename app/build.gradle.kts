@@ -91,8 +91,8 @@ android {
     }
 
     dynamicFeatures = mutableSetOf(
-        BuildModules.Features.SPLASHSCREEN,
-        BuildModules.Features.TUTORIAL,
+        BuildModules.Features.WELCOME,
+        BuildModules.Features.LOGIN,
         BuildModules.Features.DASHBOARD
     )
 

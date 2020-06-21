@@ -22,8 +22,8 @@ object BuildModules {
     const val BASE_ANDROID = ":base-android"
 
     object Features {
-        const val SPLASHSCREEN = ":features:splashscreen"
-        const val TUTORIAL = ":features:tutorial"
+        const val WELCOME = ":features:welcome"
+        const val LOGIN = ":features:login"
         const val DASHBOARD = ":features:dashboard"
     }
 
